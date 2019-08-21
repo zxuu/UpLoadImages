@@ -14,13 +14,13 @@
         android:id="@+id/btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="上传图片"/>
+        android:text="删除记录"/>
 
     <Button
         android:id="@+id/btn_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="上传图片2"/>
+        android:text=""/>
 
     <Button
         android:id="@+id/btn_Login"
@@ -28,8 +28,14 @@
         android:layout_height="wrap_content"
         android:text="Login"/>
 
+    <Button
+        android:id="@+id/btn_urine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="查看尿不湿状态"/>
+
     <TextView
-        android:id="@+id/text"
+        android:id="@+id/text_test"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

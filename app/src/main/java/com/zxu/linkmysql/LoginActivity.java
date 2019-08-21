@@ -1,6 +1,7 @@
 package com.zxu.linkmysql;
 
 
+import android.annotation.SuppressLint;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
@@ -18,6 +19,8 @@ import com.loopj.android.http.RequestParams;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.List;
+import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -75,12 +78,17 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         Toast.makeText(this, object.toJSONString(), Toast.LENGTH_SHORT).show();
     }
 
+    @SuppressLint("HandlerLeak")
     Handler handler = new Handler() {
 
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case 3:
+                    List<Map<String,String>> maps = JSONTOOL.analyze_some_json(msg.obj.toString());
 //                    Toast.makeText(LoginActivity.this, (String)map.get("name"), Toast.LENGTH_LONG).show();
+                    for(Map<String,String> map : maps){
+                        String url_video = map.get("url_video");
+                    }
                     break;
                 case 400:
                     Toast.makeText(LoginActivity.this, "登陆失败", Toast.LENGTH_LONG).show();
